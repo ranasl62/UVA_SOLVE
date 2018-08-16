@@ -1,19 +1,20 @@
-#include<iostream>
+#include"iostream"
+#include"string"
+#include"stdio.h"
 using namespace std;
 int main()
 {
-    string str;
-    while(getline(cin,str))
-    {
-        int len = str.size();
-        int p=0;
-        for(int i=0;i<len;i++){
-           if(isalpha(str[i]) && (!isalpha(str[i+1])))
-        p++;
-        }
-           cout<<p<<endl;
+    char name[1000];
+    int i,p;
+    while(gets(name))
 
+{
+p=0;
+for(i=0;name[i]!='\0';i++)
+{
+    if(((name[i]>='a'&& name[i]<='z')||(name[i]>='A' && name[i]<='Z'))&&(name[i+1]<'a' || name[i+1]>'z') &&(name[i+1]<'A' || name[i+1]>'Z'))
+          p++;
+      }
+      printf("%d\n",p);
     }
-
-    return 0;
 }
